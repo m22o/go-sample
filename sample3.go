@@ -11,4 +11,8 @@ func main(){
   defer resp.Body.Close()
   body,_:= ioutil.ReadAll(resp.Body)
   log.Println(string(body))
+  log.Print("status:",resp.Status) //ステータスコード
+  log.Print("Headers:",resp.Header)
+  log.Println("Conten-Length:",resp.Header.Get("Content-Length"))
+  
 }
